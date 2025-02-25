@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Static Browser</title>
+  <script>
+    async function loadPage(url) {
+      document.getElementById("content").innerHTML = "<p>Loading...</p>";
+
+      const response = await fetch(`/fetch?url=${encodeURIComponent(url)}`);
+      const html = await response.text();
+      
+      document.getElementById("content").innerHTML = html;
+      fixLinks();
+    }
+
+    function fixLinks() {
+      document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function(event) {
+          event.preventDefault();
+          loadPage(link.href);
+        });
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      loadPage("https://example.com");
+    });
+  </script>
+</head>
+<body>
+  <h1>Static Browser</h1>
+  <div id="content">
+    <p>Loading...</p>
+  </div>
+</body>
+</html>
