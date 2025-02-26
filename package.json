@@ -9,4 +9,8 @@
     "express": "^4.17.1",
     "puppeteer": "^22.8.2"
   }
+  "scripts": {
+    "postinstall": "npx puppeteer browsers install chrome"
+  }
+
 }
