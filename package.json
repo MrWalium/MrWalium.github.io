@@ -1,16 +1,12 @@
 {
   "name": "static-browser",
   "version": "1.0.0",
-  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "npx puppeteer browsers install chrome"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "puppeteer": "^22.8.2"
   }
-  "scripts": {
-    "postinstall": "npx puppeteer browsers install chrome"
-  }
-
 }
