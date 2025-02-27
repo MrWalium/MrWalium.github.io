@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Basic test to confirm PHP is working
 echo "Hello, PHP is working on Vercel!";
 
