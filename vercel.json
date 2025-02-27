@@ -11,8 +11,7 @@
       "src": "/(.*)",
       "dest": "server.js"
     }
-  ]
-  {
+  ],
   "functions": {
     "api/*": {
       "runtime": "nodejs18.x"
