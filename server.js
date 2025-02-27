@@ -1,11 +1,13 @@
-const puppeteer = require("puppeteer");
+const puppeteer = require("puppeteer-core");
+const chromium = require("chrome-aws-lambda");
 
 module.exports = async (req, res) => {
     try {
         const browser = await puppeteer.launch({
-            headless: "new", // Ensures latest headless mode
-            args: ["--no-sandbox", "--disable-setuid-sandbox"], // Required for Vercel
-            executablePath: process.env.CHROME_EXECUTABLE_PATH // Uses correct Chrome path on Vercel
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath, // Ensures correct Chromium path
+            headless: chromium.headless,
         });
 
         const page = await browser.newPage();
