@@ -10,6 +10,8 @@ module.exports = async (req, res) => {
             headless: chromium.headless,
         });
 
+        console.log("CHROME_EXECUTABLE_PATH:", process.env.CHROME_EXECUTABLE_PATH);
+
         const page = await browser.newPage();
         await page.goto("https://example.com", { waitUntil: "networkidle2" });
 
