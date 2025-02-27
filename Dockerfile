@@ -1,22 +1,22 @@
-# Use official PHP with Apache
+# Use PHP with Apache as the base image
 FROM php:8.2-apache
 
-# Install required PHP extensions
-RUN docker-php-ext-install pdo pdo_mysql
-
-# Enable mod_rewrite for Apache (needed for clean URLs)
+# Enable mod_rewrite (if needed)
 RUN a2enmod rewrite
 
-# Set working directory
+# Set working directory inside the container
 WORKDIR /var/www/html
 
-# Copy all project files to the container
-COPY . /var/www/html/
+# Copy public files (index.html, favicon, etc.)
+COPY public/ /var/www/html/
+
+# Copy PHP files from the api directory
+COPY api/ /var/www/html/api/
 
 # Set correct permissions
-RUN chown -R www-data:www-data /var/www/html/
+RUN chown -R www-data:www-data /var/www/html
 
-# Expose port 80 (default for Apache)
+# Expose port 80 for the web server
 EXPOSE 80
 
 # Start Apache server
