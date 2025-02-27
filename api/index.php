@@ -1,10 +1,9 @@
 <?php
+// Basic test to confirm PHP is working
 echo "Hello, PHP is working on Vercel!";
-?>
 
-<?php
-
-require 'vendor/autoload.php'; // Ensure you have Guzzle installed via Composer
+// Use Guzzle to fetch data from an external site
+require 'vendor/autoload.php'; // Make sure Guzzle is installed via Composer
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
@@ -26,5 +25,4 @@ try {
     http_response_code(500);
     echo "Error fetching page";
 }
-
 ?>
