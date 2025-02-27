@@ -1,4 +1,8 @@
 <?php
+echo "Hello, PHP is working on Vercel!";
+?>
+
+<?php
 
 require 'vendor/autoload.php'; // Ensure you have Guzzle installed via Composer
 
