@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "apps": {
+    "com.instagram.android": {
+      "strict": true,
+      "tabs": [
+        {"surface": "REELS", "words": ["reels", "clips_tab"]},
+        {"surface": "EXPLORE", "words": ["explore", "search_tab"]},
+        {"surface": "FEED", "words": ["home", "feed_tab"]},
+        {"surface": "MESSAGES", "words": ["messages", "direct", "inbox", "chats", "direct_tab"]}
+      ],
+      "viewerIds": ["clips_viewer", "clips_swipe_refresh"],
+      "threadIds": ["direct_thread", "thread_composer"],
+      "inboxIds": ["direct_inbox"],
+      "denyWords": ["reels", "explore", "clips_tab", "home", "feed_tab"]
+    },
+    "com.google.android.youtube": {
+      "strict": false,
+      "tabs": [
+        {"surface": "REELS", "words": ["shorts"]},
+        {"surface": "FEED", "words": ["home"]}
+      ],
+      "viewerIds": ["reel_player", "reel_recycler"],
+      "threadIds": [],
+      "inboxIds": [],
+      "denyWords": ["shorts", "home"]
+    },
+    "com.zhiliaoapp.musically": {
+      "strict": true,
+      "tabs": [
+        {"surface": "REELS", "words": ["home", "for you"]},
+        {"surface": "FRIENDS", "words": ["friends"]},
+        {"surface": "MESSAGES", "words": ["inbox"]}
+      ],
+      "viewerIds": [],
+      "threadIds": [],
+      "inboxIds": [],
+      "denyWords": ["for you", "friends", "home"]
+    },
+    "com.ss.android.ugc.trill": {
+      "strict": true,
+      "tabs": [
+        {"surface": "REELS", "words": ["home", "for you"]},
+        {"surface": "FRIENDS", "words": ["friends"]},
+        {"surface": "MESSAGES", "words": ["inbox"]}
+      ],
+      "viewerIds": [],
+      "threadIds": [],
+      "inboxIds": [],
+      "denyWords": ["for you", "friends", "home"]
+    }
+  }
+}
